@@ -11,9 +11,10 @@ package miniraknare;
  */
 public class Miniraknare_JFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Miniraknare
-     */
+    private double total1 = 0.0;
+    private double total2 = 0.0;
+    private String sign = "";
+    
     public Miniraknare_JFrame() {
         initComponents();
     }
@@ -28,81 +29,156 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         txfOutput = new javax.swing.JTextField();
-        number1 = new javax.swing.JButton();
         btnMult = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnSub = new javax.swing.JButton();
         btnDiv = new javax.swing.JButton();
-        number2 = new javax.swing.JButton();
-        number3 = new javax.swing.JButton();
-        number6 = new javax.swing.JButton();
-        number4 = new javax.swing.JButton();
-        number5 = new javax.swing.JButton();
-        number9 = new javax.swing.JButton();
-        number8 = new javax.swing.JButton();
-        number7 = new javax.swing.JButton();
-        number0 = new javax.swing.JButton();
-        btn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEqual = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        btnNumber1 = new javax.swing.JButton();
+        btnNumber2 = new javax.swing.JButton();
+        btnNumber3 = new javax.swing.JButton();
+        btnNumber4 = new javax.swing.JButton();
+        btnNumber5 = new javax.swing.JButton();
+        btnNumber6 = new javax.swing.JButton();
+        btnNumber7 = new javax.swing.JButton();
+        btnNumber8 = new javax.swing.JButton();
+        btnNumber9 = new javax.swing.JButton();
+        btnNumber0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 350));
 
         txfOutput.setFont(new java.awt.Font("Century Schoolbook", 0, 36)); // NOI18N
 
-        number1.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number1.setText("1");
-
         btnMult.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
         btnMult.setText("*");
         btnMult.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        btnAdd.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        btnAdd.setText("+");
-
-        btnSub.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        btnSub.setText("-");
-
-        btnDiv.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        btnDiv.setText("/");
-
-        number2.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number2.setText("2");
-
-        number3.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number3.setText("3");
-
-        number6.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number6.setText("6");
-
-        number4.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number4.setText("4");
-
-        number5.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number5.setText("5");
-
-        number9.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number9.setText("9");
-
-        number8.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number8.setText("8");
-
-        number7.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number7.setText("7");
-
-        number0.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        number0.setText("0");
-
-        btn.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        btn.setText("=");
-        btn.addActionListener(new java.awt.event.ActionListener() {
+        btnMult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
+                btnMultActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        jButton2.setText("C");
+        btnAdd.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnAdd.setText("+");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        btnSub.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnSub.setText("-");
+        btnSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubActionPerformed(evt);
+            }
+        });
+
+        btnDiv.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnDiv.setText("/");
+        btnDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivActionPerformed(evt);
+            }
+        });
+
+        btnEqual.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnEqual.setText("=");
+        btnEqual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEqualActionPerformed(evt);
+            }
+        });
+
+        btnReset.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnReset.setText("C");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        btnNumber1.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber1.setText("1");
+        btnNumber1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber1ActionPerformed(evt);
+            }
+        });
+
+        btnNumber2.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber2.setText("2");
+        btnNumber2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber2ActionPerformed(evt);
+            }
+        });
+
+        btnNumber3.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber3.setText("3");
+        btnNumber3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber3ActionPerformed(evt);
+            }
+        });
+
+        btnNumber4.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber4.setText("4");
+        btnNumber4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber4ActionPerformed(evt);
+            }
+        });
+
+        btnNumber5.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber5.setText("5");
+        btnNumber5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber5ActionPerformed(evt);
+            }
+        });
+
+        btnNumber6.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber6.setText("6");
+        btnNumber6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber6ActionPerformed(evt);
+            }
+        });
+
+        btnNumber7.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber7.setText("7");
+        btnNumber7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber7ActionPerformed(evt);
+            }
+        });
+
+        btnNumber8.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber8.setText("8");
+        btnNumber8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber8ActionPerformed(evt);
+            }
+        });
+
+        btnNumber9.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber9.setText("9");
+        btnNumber9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber9ActionPerformed(evt);
+            }
+        });
+
+        btnNumber0.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnNumber0.setText("0");
+        btnNumber0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumber0ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,24 +192,24 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                         .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(number1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnNumber3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(number4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnNumber6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(number7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNumber8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(number0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNumber0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,11 +218,11 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                     .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnEqual, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
@@ -159,7 +235,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -168,33 +244,141 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                 .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnEqual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(number2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(number6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNumber6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(number9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(number0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnNumber0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActionPerformed
+    private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
+       
+        switch(sign){
+            case "+" : total2 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+                       txfOutput.setText( Double.toString(total2) );
+                       total1 = 0;
+                       total2 = 0;
+                       break;
+            case "-" : total2 = total1 - Double.parseDouble( txfOutput.getText( ) ) ;
+                       txfOutput.setText( Double.toString(total2) );
+                       total1 = 0;
+                       total2 = 0;
+                       break;
+            case "*" : total2 = total1 * Double.parseDouble( txfOutput.getText( ) ) ;
+                       txfOutput.setText( Double.toString(total2) );
+                       total1 = 0;
+                       total2 = 0;
+                       break;
+            case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
+                       txfOutput.setText( Double.toString(total2) );
+                       total1 = 0;
+                       total2 = 0;
+                       break;                       
+                       
+        
+        }
+        
+        
+    }//GEN-LAST:event_btnEqualActionPerformed
+
+    private void btnNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber1ActionPerformed
+        String btnOneText = txfOutput.getText() + btnNumber1.getText();
+        txfOutput.setText(btnOneText);
+    }//GEN-LAST:event_btnNumber1ActionPerformed
+
+    private void btnNumber2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber2ActionPerformed
+        String btnTwoText = txfOutput.getText() + btnNumber2.getText( );
+        txfOutput.setText(btnTwoText);
+    }//GEN-LAST:event_btnNumber2ActionPerformed
+
+    private void btnNumber3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber3ActionPerformed
+        String btnThreeText = txfOutput.getText() + btnNumber3.getText( );
+        txfOutput.setText(btnThreeText);
+    }//GEN-LAST:event_btnNumber3ActionPerformed
+
+    private void btnNumber4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber4ActionPerformed
+        String btnFourText = txfOutput.getText() + btnNumber4.getText( );
+        txfOutput.setText(btnFourText);
+    }//GEN-LAST:event_btnNumber4ActionPerformed
+
+    private void btnNumber5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber5ActionPerformed
+        String btnFiveText = txfOutput.getText() + btnNumber5.getText( );
+        txfOutput.setText(btnFiveText);
+    }//GEN-LAST:event_btnNumber5ActionPerformed
+
+    private void btnNumber6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber6ActionPerformed
+        String btnSixText = txfOutput.getText() + btnNumber6.getText( );
+        txfOutput.setText(btnSixText);
+    }//GEN-LAST:event_btnNumber6ActionPerformed
+
+    private void btnNumber7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber7ActionPerformed
+        String btnSevenText = txfOutput.getText() + btnNumber7.getText( );
+        txfOutput.setText(btnSevenText);
+    }//GEN-LAST:event_btnNumber7ActionPerformed
+
+    private void btnNumber8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber8ActionPerformed
+        String btnEightText = txfOutput.getText() + btnNumber8.getText( );
+        txfOutput.setText(btnEightText);
+    }//GEN-LAST:event_btnNumber8ActionPerformed
+
+    private void btnNumber9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber9ActionPerformed
+        String btnNineText = txfOutput.getText() + btnNumber9.getText( );
+        txfOutput.setText(btnNineText);
+    }//GEN-LAST:event_btnNumber9ActionPerformed
+
+    private void btnNumber0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber0ActionPerformed
+        String btnZeroText = txfOutput.getText() + btnNumber0.getText( );
+        txfOutput.setText(btnZeroText);
+    }//GEN-LAST:event_btnNumber0ActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        txfOutput.setText("");
+        sign = "+" ;     
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        txfOutput.setText("");
+        sign = "-" ;
+    }//GEN-LAST:event_btnSubActionPerformed
+
+    private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        txfOutput.setText("");
+        sign = "*" ;
+    }//GEN-LAST:event_btnMultActionPerformed
+
+    private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        txfOutput.setText("");
+        sign = "/" ;
+    }//GEN-LAST:event_btnDivActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        total1 = 0.0;
+        total2 = 0.0;
+        sign = "";
+        txfOutput.setText("");
+        
+    }//GEN-LAST:event_btnResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,22 +417,22 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDiv;
+    private javax.swing.JButton btnEqual;
     private javax.swing.JButton btnMult;
+    private javax.swing.JButton btnNumber0;
+    private javax.swing.JButton btnNumber1;
+    private javax.swing.JButton btnNumber2;
+    private javax.swing.JButton btnNumber3;
+    private javax.swing.JButton btnNumber4;
+    private javax.swing.JButton btnNumber5;
+    private javax.swing.JButton btnNumber6;
+    private javax.swing.JButton btnNumber7;
+    private javax.swing.JButton btnNumber8;
+    private javax.swing.JButton btnNumber9;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSub;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton number0;
-    private javax.swing.JButton number1;
-    private javax.swing.JButton number2;
-    private javax.swing.JButton number3;
-    private javax.swing.JButton number4;
-    private javax.swing.JButton number5;
-    private javax.swing.JButton number6;
-    private javax.swing.JButton number7;
-    private javax.swing.JButton number8;
-    private javax.swing.JButton number9;
     private javax.swing.JTextField txfOutput;
     // End of variables declaration//GEN-END:variables
 }
