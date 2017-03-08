@@ -14,6 +14,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     private double total1 = 0.0;
     private double total2 = 0.0;
     private String sign = "";
+    private boolean clear = false;
     
     public Miniraknare_JFrame() {
         initComponents();
@@ -275,6 +276,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                        txfOutput.setText( Double.toString(total2) );
                        total1 = 0;
                        total2 = 0;
+                       
                        break;
             case "-" : total2 = total1 - Double.parseDouble( txfOutput.getText( ) ) ;
                        txfOutput.setText( Double.toString(total2) );
@@ -294,56 +296,95 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                        
         
         }
-        
-        
+        clear = true;
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber1ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnOneText = txfOutput.getText() + btnNumber1.getText();
         txfOutput.setText(btnOneText);
     }//GEN-LAST:event_btnNumber1ActionPerformed
 
     private void btnNumber2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber2ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnTwoText = txfOutput.getText() + btnNumber2.getText( );
         txfOutput.setText(btnTwoText);
     }//GEN-LAST:event_btnNumber2ActionPerformed
 
     private void btnNumber3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber3ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnThreeText = txfOutput.getText() + btnNumber3.getText( );
         txfOutput.setText(btnThreeText);
     }//GEN-LAST:event_btnNumber3ActionPerformed
 
     private void btnNumber4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber4ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnFourText = txfOutput.getText() + btnNumber4.getText( );
         txfOutput.setText(btnFourText);
     }//GEN-LAST:event_btnNumber4ActionPerformed
 
     private void btnNumber5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber5ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnFiveText = txfOutput.getText() + btnNumber5.getText( );
         txfOutput.setText(btnFiveText);
     }//GEN-LAST:event_btnNumber5ActionPerformed
 
     private void btnNumber6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber6ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnSixText = txfOutput.getText() + btnNumber6.getText( );
         txfOutput.setText(btnSixText);
     }//GEN-LAST:event_btnNumber6ActionPerformed
 
     private void btnNumber7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber7ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnSevenText = txfOutput.getText() + btnNumber7.getText( );
         txfOutput.setText(btnSevenText);
     }//GEN-LAST:event_btnNumber7ActionPerformed
 
     private void btnNumber8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber8ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnEightText = txfOutput.getText() + btnNumber8.getText( );
         txfOutput.setText(btnEightText);
     }//GEN-LAST:event_btnNumber8ActionPerformed
 
     private void btnNumber9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber9ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnNineText = txfOutput.getText() + btnNumber9.getText( );
         txfOutput.setText(btnNineText);
     }//GEN-LAST:event_btnNumber9ActionPerformed
 
     private void btnNumber0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber0ActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
         String btnZeroText = txfOutput.getText() + btnNumber0.getText( );
         txfOutput.setText(btnZeroText);
     }//GEN-LAST:event_btnNumber0ActionPerformed
