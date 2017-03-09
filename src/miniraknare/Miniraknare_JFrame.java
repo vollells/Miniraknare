@@ -46,10 +46,12 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         btnNumber8 = new javax.swing.JButton();
         btnNumber9 = new javax.swing.JButton();
         btnNumber0 = new javax.swing.JButton();
+        btnDot = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 350));
 
+        txfOutput.setEditable(false);
         txfOutput.setFont(new java.awt.Font("Century Schoolbook", 0, 36)); // NOI18N
 
         btnMult.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
@@ -181,6 +183,14 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
+        btnDot.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnDot.setText(".");
+        btnDot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDotActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,7 +201,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                     .addComponent(txfOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,12 +215,16 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnNumber6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnNumber0, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnNumber8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNumber8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnNumber0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,11 +272,13 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                             .addComponent(btnNumber5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnNumber8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNumber7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnNumber0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNumber0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -273,26 +289,26 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
        
         switch(sign){
             case "+" : total2 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2) );
+                       txfOutput.setText( Double.toString(total2));
                        total1 = 0;
                        total2 = 0;
                        
                        break;
             case "-" : total2 = total1 - Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2) );
+                       txfOutput.setText(Double.toString(total2));
                        total1 = 0;
                        total2 = 0;
                        break;
             case "*" : total2 = total1 * Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2) );
+                       txfOutput.setText( Double.toString(total2));
                        total1 = 0;
                        total2 = 0;
                        break;
             case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2) );
+                       txfOutput.setText( Double.toString(total2));
                        total1 = 0;
                        total2 = 0;
-                       break;                       
+                       break;      
                        
         
         }
@@ -390,26 +406,30 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNumber0ActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        total1 = 0;
         total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        txfOutput.setText("");
+        clear = true;
         sign = "+" ;     
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
+        total1 = 0;
         total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        txfOutput.setText("");
+        clear = true;
         sign = "-" ;
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
+        total1 = 0;
         total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        txfOutput.setText("");
+        clear = true;
         sign = "*" ;
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+        total1 = 0;
         total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        txfOutput.setText("");
+        clear = true;
         sign = "/" ;
     }//GEN-LAST:event_btnDivActionPerformed
 
@@ -420,6 +440,15 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfOutput.setText("");
         
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
+        if(clear == true){
+        txfOutput.setText("");
+        clear = false;
+        }
+        String btnDotText = txfOutput.getText() + btnDot.getText( );
+        txfOutput.setText(btnDotText);
+    }//GEN-LAST:event_btnDotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -460,6 +489,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDiv;
+    private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEqual;
     private javax.swing.JButton btnMult;
     private javax.swing.JButton btnNumber0;
