@@ -52,6 +52,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         btnRecallMemory = new javax.swing.JButton();
         btnAddMemory = new javax.swing.JButton();
         btnSubMemory = new javax.swing.JButton();
+        btnChangeValue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 350));
@@ -228,6 +229,14 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
+        btnChangeValue.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 30)); // NOI18N
+        btnChangeValue.setText("+/-");
+        btnChangeValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeValueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -277,6 +286,8 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,7 +313,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -333,40 +346,43 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNumber0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private double round(double a, double b){
+        a = Math.round(a * Math.pow(10, b))/ Math.pow(10, b);
+        return a;
+    }
+    
+    private void answer(double a){
+        txfOutput.setText( Double.toString(total2));
+        total1 = 0;
+        total2 = 0;
+        clear = true;
+    }
+    
+    
     private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
        
         switch(sign){
             case "+" : total2 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2));
-                       total1 = 0;
-                       total2 = 0;
-                       
                        break;
+                       
             case "-" : total2 = total1 - Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText(Double.toString(total2));
-                       total1 = 0;
-                       total2 = 0;
                        break;
-            case "*" : total2 = total1 * Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2));
-                       total1 = 0;
-                       total2 = 0;
-                       break;
-            case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
-                       txfOutput.setText( Double.toString(total2));
-                       total1 = 0;
-                       total2 = 0;
-                       break;      
                        
-        
+            case "*" : total2 = total1 * Double.parseDouble( txfOutput.getText( ) ) ;
+                       break;
+                       
+            case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
+                       break;      
         }
-        clear = true;
+        total2 = round(total2, 3);
+        answer(total2);
+        
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber1ActionPerformed
@@ -520,6 +536,11 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         memory = memory - Double.parseDouble(txfOutput.getText());
     }//GEN-LAST:event_btnSubMemoryActionPerformed
 
+    private void btnChangeValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeValueActionPerformed
+        double a = Double.parseDouble(txfOutput.getText()) * -1;
+        txfOutput.setText(Double.toString(a));
+    }//GEN-LAST:event_btnChangeValueActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -559,6 +580,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnAddMemory;
+    private javax.swing.JButton btnChangeValue;
     private javax.swing.JButton btnClearMemory;
     private javax.swing.JButton btnDiv;
     private javax.swing.JButton btnDot;
