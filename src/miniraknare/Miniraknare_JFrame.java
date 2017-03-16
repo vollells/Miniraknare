@@ -30,7 +30,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnSquare1 = new javax.swing.JButton();
         txfOutput = new javax.swing.JTextField();
+        txfMemValue = new javax.swing.JTextField();
         btnMult = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnSub = new javax.swing.JButton();
@@ -53,12 +55,33 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         btnAddMemory = new javax.swing.JButton();
         btnSubMemory = new javax.swing.JButton();
         btnChangeValue = new javax.swing.JButton();
+        btnSquare = new javax.swing.JButton();
+        btnPow2 = new javax.swing.JButton();
+        btnPow3 = new javax.swing.JButton();
+        btnOneDiv = new javax.swing.JButton();
+        btnFact = new javax.swing.JButton();
+        btnPowY = new javax.swing.JButton();
+        btnSquare4 = new javax.swing.JButton();
+        btnSquare5 = new javax.swing.JButton();
+
+        btnSquare1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        btnSquare1.setText("√");
+        btnSquare1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSquare1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSquare1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 350));
 
         txfOutput.setEditable(false);
         txfOutput.setFont(new java.awt.Font("Century Schoolbook", 0, 36)); // NOI18N
+
+        txfMemValue.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        txfMemValue.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfMemValue.setText("M");
 
         btnMult.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
         btnMult.setText("*");
@@ -237,6 +260,65 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSquare.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        btnSquare.setText("√");
+        btnSquare.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSquare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSquareActionPerformed(evt);
+            }
+        });
+
+        btnPow2.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 30)); // NOI18N
+        btnPow2.setText("x^2");
+        btnPow2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPow2ActionPerformed(evt);
+            }
+        });
+
+        btnPow3.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 30)); // NOI18N
+        btnPow3.setText("x^3");
+        btnPow3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPow3ActionPerformed(evt);
+            }
+        });
+
+        btnOneDiv.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnOneDiv.setText("1/x");
+        btnOneDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOneDivActionPerformed(evt);
+            }
+        });
+
+        btnFact.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnFact.setText("!x");
+        btnFact.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnFact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFactActionPerformed(evt);
+            }
+        });
+
+        btnPowY.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnPowY.setText("x^y");
+        btnPowY.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnPowY.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPowYActionPerformed(evt);
+            }
+        });
+
+        btnSquare4.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnSquare4.setText("_____");
+        btnSquare4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        btnSquare5.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnSquare5.setText("______");
+        btnSquare5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,8 +326,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txfOutput, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,8 +351,24 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnNumber9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSquare, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnPow2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnPowY, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,54 +376,35 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnEqual, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAddMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnClearMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnOneDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSquare4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnPow3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnSquare5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addComponent(txfOutput))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnClearMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAddMemory, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(btnRecallMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txfMemValue))
+                    .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txfOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txfOutput, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                    .addComponent(txfMemValue))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnClearMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnEqual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAddMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,8 +423,49 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNumber0, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                            .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnClearMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSquare, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnPow2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAddMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnEqual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(btnPow3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(btnSquare5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(btnOneDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btnSquare4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(btnPowY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -378,8 +497,32 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                        break;
                        
             case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
-                       break;      
+                       break;
+                       
+            case "sq" : total2 =  Math.sqrt(total1) ;
+                       break;
+                       
+            case "P2" : total2 =  Math.pow(total1, 2) ;
+                       break; 
+                       
+            case "P3" : total2 = Math.pow(total1, 3)  ;
+                       break;
+                       
+            case "Div1" : total2 = 1/total1 ;
+                       break;
+            
+            case "Fa" : total2 = 1;
+                        for (int i = 1; i <= Math.round(total1) ; i++ ){
+                            total2 = total2 * i;
+                        } 
+                       break;
+            
+            case "PowY" : total2 = Math.pow(total1, Double.parseDouble(txfOutput.getText()));
+                       break;
+                       
+            default: total2 = Double.parseDouble(txfOutput.getText());
         }
+        
         total2 = round(total2, 3);
         answer(total2);
         
@@ -522,24 +665,74 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
 
     private void btnClearMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearMemoryActionPerformed
         memory = 0;
+        txfMemValue.setText(Double.toString(memory));
     }//GEN-LAST:event_btnClearMemoryActionPerformed
 
     private void btnRecallMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecallMemoryActionPerformed
         txfOutput.setText(Double.toString(memory));
+        txfMemValue.setText(Double.toString(memory));
     }//GEN-LAST:event_btnRecallMemoryActionPerformed
 
     private void btnAddMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMemoryActionPerformed
         memory = memory + Double.parseDouble(txfOutput.getText());
+        txfMemValue.setText(Double.toString(memory));
     }//GEN-LAST:event_btnAddMemoryActionPerformed
 
     private void btnSubMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubMemoryActionPerformed
         memory = memory - Double.parseDouble(txfOutput.getText());
+        txfMemValue.setText(Double.toString(memory));
     }//GEN-LAST:event_btnSubMemoryActionPerformed
 
     private void btnChangeValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeValueActionPerformed
         double a = Double.parseDouble(txfOutput.getText()) * -1;
         txfOutput.setText(Double.toString(a));
     }//GEN-LAST:event_btnChangeValueActionPerformed
+
+    private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "sq" ;
+    }//GEN-LAST:event_btnSquareActionPerformed
+
+    private void btnPow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow2ActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "P2" ;
+    }//GEN-LAST:event_btnPow2ActionPerformed
+
+    private void btnPow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow3ActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "P3" ;
+    }//GEN-LAST:event_btnPow3ActionPerformed
+
+    private void btnOneDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneDivActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "Div1" ;
+    }//GEN-LAST:event_btnOneDivActionPerformed
+
+    private void btnSquare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquare1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSquare1ActionPerformed
+
+    private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "Fa" ;
+    }//GEN-LAST:event_btnFactActionPerformed
+
+    private void btnPowYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPowYActionPerformed
+        total1 = 0;
+        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+        clear = true;
+        sign = "PowY" ;
+    }//GEN-LAST:event_btnPowYActionPerformed
 
     /**
      * @param args the command line arguments
@@ -585,6 +778,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnDiv;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEqual;
+    private javax.swing.JButton btnFact;
     private javax.swing.JButton btnMult;
     private javax.swing.JButton btnNumber0;
     private javax.swing.JButton btnNumber1;
@@ -596,10 +790,19 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnNumber7;
     private javax.swing.JButton btnNumber8;
     private javax.swing.JButton btnNumber9;
+    private javax.swing.JButton btnOneDiv;
+    private javax.swing.JButton btnPow2;
+    private javax.swing.JButton btnPow3;
+    private javax.swing.JButton btnPowY;
     private javax.swing.JButton btnRecallMemory;
     private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSquare;
+    private javax.swing.JButton btnSquare1;
+    private javax.swing.JButton btnSquare4;
+    private javax.swing.JButton btnSquare5;
     private javax.swing.JButton btnSub;
     private javax.swing.JButton btnSubMemory;
+    private javax.swing.JTextField txfMemValue;
     private javax.swing.JTextField txfOutput;
     // End of variables declaration//GEN-END:variables
 }
