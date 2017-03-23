@@ -125,7 +125,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnClearMemory" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnAddMemory" alignment="0" pref="100" max="32767" attributes="0"/>
-                      <Component id="btnRecallMemory" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnRecallMem" alignment="0" max="32767" attributes="0"/>
                       <Component id="txfMemValue" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="btnSubMemory" min="-2" pref="100" max="-2" attributes="0"/>
@@ -200,9 +200,9 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="btnPow3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="btnSquare5" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
+                                                  <Component id="btnPow3" min="-2" pref="39" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
@@ -215,7 +215,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                               <Component id="btnOneDiv" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="btnRecallMemory" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="btnRecallMem" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="btnSquare4" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                                       </Group>
@@ -448,7 +448,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearMemoryActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRecallMemory">
+    <Component class="javax.swing.JButton" name="btnRecallMem">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Abadi MT Condensed Extra Bold" size="36" style="0"/>
@@ -456,7 +456,7 @@
         <Property name="text" type="java.lang.String" value="MR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRecallMemoryActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRecallMemActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAddMemory">
@@ -552,7 +552,7 @@
     <Component class="javax.swing.JButton" name="btnPowY">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Abadi MT Condensed Extra Bold" size="36" style="1"/>
+          <Font name="Abadi MT Condensed Extra Bold" size="32" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="x^y"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
@@ -564,18 +564,18 @@
     <Component class="javax.swing.JButton" name="btnSquare4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Abadi MT Condensed Extra Bold" size="36" style="1"/>
+          <Font name="Abadi MT Condensed Extra Bold" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="_____"/>
+        <Property name="text" type="java.lang.String" value="N/A"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSquare5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Abadi MT Condensed Extra Bold" size="36" style="1"/>
+          <Font name="Abadi MT Condensed Extra Bold" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="______"/>
+        <Property name="text" type="java.lang.String" value="N/A"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
     </Component>

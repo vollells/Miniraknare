@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package miniraknare;
 
+import javax.swing.JOptionPane;
+
 /**
- *
+ * Klass that 
  * @author victorlells
  */
 public class Miniraknare_JFrame extends javax.swing.JFrame {
 
+    //membervars
     private double total1 = 0.0;
     private double total2 = 0.0;
     private String sign = "";
@@ -51,7 +50,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         btnNumber0 = new javax.swing.JButton();
         btnDot = new javax.swing.JButton();
         btnClearMemory = new javax.swing.JButton();
-        btnRecallMemory = new javax.swing.JButton();
+        btnRecallMem = new javax.swing.JButton();
         btnAddMemory = new javax.swing.JButton();
         btnSubMemory = new javax.swing.JButton();
         btnChangeValue = new javax.swing.JButton();
@@ -228,11 +227,11 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnRecallMemory.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
-        btnRecallMemory.setText("MR");
-        btnRecallMemory.addActionListener(new java.awt.event.ActionListener() {
+        btnRecallMem.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
+        btnRecallMem.setText("MR");
+        btnRecallMem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRecallMemoryActionPerformed(evt);
+                btnRecallMemActionPerformed(evt);
             }
         });
 
@@ -302,7 +301,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnPowY.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
+        btnPowY.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 32)); // NOI18N
         btnPowY.setText("x^y");
         btnPowY.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPowY.addActionListener(new java.awt.event.ActionListener() {
@@ -311,12 +310,12 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSquare4.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        btnSquare4.setText("_____");
+        btnSquare4.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 30)); // NOI18N
+        btnSquare4.setText("N/A");
         btnSquare4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btnSquare5.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 36)); // NOI18N
-        btnSquare5.setText("______");
+        btnSquare5.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 1, 30)); // NOI18N
+        btnSquare5.setText("N/A");
         btnSquare5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -391,7 +390,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btnClearMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAddMemory, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                        .addComponent(btnRecallMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRecallMem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txfMemValue))
                     .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
@@ -451,9 +450,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(btnPow3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(btnSquare5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(btnSquare5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(btnPow3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -462,7 +461,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                 .addComponent(btnOneDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(btnRecallMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(btnRecallMem, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(btnSquare4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(btnPowY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -471,36 +470,95 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Metod som avrundar svaret a till b decimaler 
     private double round(double a, double b){
         a = Math.round(a * Math.pow(10, b))/ Math.pow(10, b);
         return a;
     }
     
+    //Metod som skriver ut svaret a
     private void answer(double a){
-        txfOutput.setText( Double.toString(total2));
-        total1 = 0;
-        total2 = 0;
-        clear = true;
+        double large = Math.pow(10, 14);
+        if(a < large){
+            txfOutput.setText( Double.toString(a));
+            total1 = 0;
+            total2 = 0;
+            clear = true;
+        }else{
+            txfOutput.setText("ERROR");
+        }
+    }
+    
+    private void catchNoNum(){
+        try{
+       
+            total1 = 0;
+            total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+            clear = true;
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter a number before "
+                    + "clicking a arithmetic sign.", "No Num",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        return;
+        
     }
     
     
+    //Metod som utför uträkningar
     private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
+
+       try{
        
+            btnEqual();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter a number before "
+                    + "clicking the Equals to button.", "No Num",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEqualActionPerformed
+    
+    private void btnEqual(){
+        /**Switch case som beroend på tidigare angivet "sign" 
+         * utför olika uträkningar med total1 & total2
+        **/
+        
         switch(sign){
-            case "+" : total2 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
+            case "+" : total2 = total1+Double.parseDouble(txfOutput.getText()) ;
                        break;
                        
-            case "-" : total2 = total1 - Double.parseDouble( txfOutput.getText( ) ) ;
+            case "-" : total2 = total1-Double.parseDouble(txfOutput.getText());
                        break;
                        
-            case "*" : total2 = total1 * Double.parseDouble( txfOutput.getText( ) ) ;
+            case "*" : total2 = total1*Double.parseDouble(txfOutput.getText());
                        break;
                        
-            case "/" : total2 = total1 / Double.parseDouble( txfOutput.getText( ) ) ;
-                       break;
-                       
-            case "sq" : total2 =  Math.sqrt(total1) ;
-                       break;
+            case "/" : 
+                        if(Double.parseDouble( txfOutput.getText( )) != 0.0){
+                            total2 = total1 /
+                            Double.parseDouble(txfOutput.getText()) ;
+                        }else{
+                            JOptionPane.showMessageDialog(null,
+                                    "Don't Div by 0");
+                            clear = true;
+                        }
+                        break;
+                                      
+            case "sq" : 
+                    if(total1 < 0){
+                            
+                            JOptionPane.showMessageDialog(null, "THE NUMBER WAS "
+                                    + "NEGATIVE", "Neg Num",
+                            JOptionPane.ERROR_MESSAGE);
+                            
+                        }else{
+                            total2 =  Math.sqrt(total1) ;
+                            break; 
+                        }
+                
+
                        
             case "P2" : total2 =  Math.pow(total1, 2) ;
                        break; 
@@ -511,32 +569,53 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             case "Div1" : total2 = 1/total1 ;
                        break;
             
-            case "Fa" : total2 = 1;
-                        for (int i = 1; i <= Math.round(total1) ; i++ ){
-                            total2 = total2 * i;
-                        } 
-                       break;
+                       /**Här tar och använder en for loop för att kunna 
+                        * multiplicera alla tidigare tal med varandra **/
+            case "Fa" : 
+                
+                        if(total1 < 0 || (total1 % 1) != 0 ){
+                            
+                            JOptionPane.showMessageDialog(null, "THE NUMBER WAS "
+                                    + "NEGATIVE OR A DECIMAL", "No Num",
+                            JOptionPane.ERROR_MESSAGE);
+                            
+                        }else{
+                            total2 = 1;
+                            for (int i = 1; i <= Math.round(total1) ; i++ ){
+                                total2 = total2 * i;
+                            } 
+                           break;
+                        }
+                        
             
-            case "PowY" : total2 = Math.pow(total1, Double.parseDouble(txfOutput.getText()));
+            case "PowY" : total2 = Math.pow(total1, 
+                    Double.parseDouble(txfOutput.getText()));
                        break;
                        
             default: total2 = Double.parseDouble(txfOutput.getText());
         }
         
+        //Anropar dessa metoder
         total2 = round(total2, 3);
         answer(total2);
-        
-    }//GEN-LAST:event_btnEqualActionPerformed
-
+    }
+    
+    
+    /**
+     * Metoden skriver ut deras nummer i txfOutput om de blir anropade
+     * @param evt 
+     */
     private void btnNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber1ActionPerformed
+
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        
         String btnOneText = txfOutput.getText() + btnNumber1.getText();
         txfOutput.setText(btnOneText);
     }//GEN-LAST:event_btnNumber1ActionPerformed
-
+    
     private void btnNumber2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber2ActionPerformed
         if(clear == true){
         txfOutput.setText("");
@@ -618,34 +697,35 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfOutput.setText(btnZeroText);
     }//GEN-LAST:event_btnNumber0ActionPerformed
 
+    
+    
+    /**
+     * Metoderna här under anger vilket tecken som ska 
+     * användas av "btnEqualActionPerformed"
+     * @param evt 
+     */
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
-        sign = "+" ;     
+        catchNoNum();
+        sign = "+" ;
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "-" ;
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "*" ;
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "/" ;
     }//GEN-LAST:event_btnDivActionPerformed
 
+    
+    //Metod som rensar alla vaiabler och Output fönstret (ej minne)
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         total1 = 0.0;
         total2 = 0.0;
@@ -653,7 +733,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfOutput.setText("");
         
     }//GEN-LAST:event_btnResetActionPerformed
-
+    
+    
+    //Metod som lägger till en punkt i output fönstret ifall den blir anropad
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
         if(clear == true){
         txfOutput.setText("");
@@ -663,74 +745,118 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfOutput.setText(btnDotText);
     }//GEN-LAST:event_btnDotActionPerformed
 
+    
+    // Rensar memory variablen & "txfMemValue"
     private void btnClearMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearMemoryActionPerformed
         memory = 0;
         txfMemValue.setText(Double.toString(memory));
     }//GEN-LAST:event_btnClearMemoryActionPerformed
+    
+    // Sätter värdet hos memory variablen i txfOutput
+    private void btnRecallMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecallMemActionPerformed
 
-    private void btnRecallMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecallMemoryActionPerformed
         txfOutput.setText(Double.toString(memory));
         txfMemValue.setText(Double.toString(memory));
-    }//GEN-LAST:event_btnRecallMemoryActionPerformed
-
+        clear = true;
+    }//GEN-LAST:event_btnRecallMemActionPerformed
+    
+    // Adderar txfOutput värdet till memory variablen &  updaterar "txfMemValue"
     private void btnAddMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMemoryActionPerformed
+    try{
+       
         memory = memory + Double.parseDouble(txfOutput.getText());
         txfMemValue.setText(Double.toString(memory));
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter a number before "
+                    + "clicking a arithmetic sign.", "No Num",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAddMemoryActionPerformed
-
+    
+    
+    /**
+     * Subtraherar txfOutput värdet till memory variablen 
+     * &  updaterar "txfMemValue"
+     * @param evt 
+     */
     private void btnSubMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubMemoryActionPerformed
+    try{
+       
         memory = memory - Double.parseDouble(txfOutput.getText());
         txfMemValue.setText(Double.toString(memory));
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter a number before "
+                    + "clicking a arithmetic sign.", "No Num",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        
+
     }//GEN-LAST:event_btnSubMemoryActionPerformed
 
+    
+    /**
+     * Multiplicerar txfOutput värdet med -1 för att ändra teckenvärdet
+     * @param evt 
+     */
     private void btnChangeValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeValueActionPerformed
-        double a = Double.parseDouble(txfOutput.getText()) * -1;
+        
+        try{
+       
+            double a = Double.parseDouble(txfOutput.getText()) * -1;
         txfOutput.setText(Double.toString(a));
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter a number before "
+                    + "reversing the value", "No Num",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
     }//GEN-LAST:event_btnChangeValueActionPerformed
-
+    
+    
+    /**
+     * Metoderna här under anger vilket tecken som ska användas 
+     * av "btnEqualActionPerformed"
+     * @param evt 
+     */
     private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "sq" ;
+        btnEqual();
     }//GEN-LAST:event_btnSquareActionPerformed
 
     private void btnPow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow2ActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "P2" ;
+        btnEqual();
     }//GEN-LAST:event_btnPow2ActionPerformed
 
     private void btnPow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow3ActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "P3" ;
+        btnEqual();
     }//GEN-LAST:event_btnPow3ActionPerformed
 
     private void btnOneDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneDivActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "Div1" ;
+        btnEqual();
     }//GEN-LAST:event_btnOneDivActionPerformed
 
     private void btnSquare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquare1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnSquare1ActionPerformed
 
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "Fa" ;
+        btnEqual();
     }//GEN-LAST:event_btnFactActionPerformed
 
     private void btnPowYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPowYActionPerformed
-        total1 = 0;
-        total1 = total1 + Double.parseDouble( txfOutput.getText( ) ) ;
-        clear = true;
+        catchNoNum();
         sign = "PowY" ;
     }//GEN-LAST:event_btnPowYActionPerformed
 
@@ -794,7 +920,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnPow2;
     private javax.swing.JButton btnPow3;
     private javax.swing.JButton btnPowY;
-    private javax.swing.JButton btnRecallMemory;
+    private javax.swing.JButton btnRecallMem;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSquare;
     private javax.swing.JButton btnSquare1;
