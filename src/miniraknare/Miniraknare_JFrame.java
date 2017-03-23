@@ -1,15 +1,14 @@
-
 package miniraknare;
 
 import javax.swing.JOptionPane;
 
 /**
- * Klass that 
+ * Klass som är en miniräknare  
  * @author victorlells
  */
 public class Miniraknare_JFrame extends javax.swing.JFrame {
 
-    //membervars
+    //Medlemsvariabler 
     private double total1 = 0.0;
     private double total2 = 0.0;
     private String sign = "";
@@ -78,9 +77,11 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfOutput.setEditable(false);
         txfOutput.setFont(new java.awt.Font("Century Schoolbook", 0, 36)); // NOI18N
 
+        txfMemValue.setEditable(false);
         txfMemValue.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
         txfMemValue.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfMemValue.setText("M");
+        txfMemValue.setActionCommand("<Not Set>");
 
         btnMult.setFont(new java.awt.Font("Abadi MT Condensed Extra Bold", 0, 36)); // NOI18N
         btnMult.setText("*");
@@ -389,9 +390,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btnClearMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddMemory, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(btnAddMemory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRecallMem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txfMemValue))
+                        .addComponent(txfMemValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSubMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
@@ -400,8 +401,8 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txfOutput, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                    .addComponent(txfMemValue))
+                    .addComponent(txfOutput)
+                    .addComponent(txfMemValue, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -469,14 +470,31 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    //Metod som avrundar svaret a till b decimaler 
+    
+    
+    
+    
+    
+    
+    /**
+     * Metod som avrundar svaret a till b decimaler 
+     * @param a värdet som ska avrundas 
+     * @param b antalet decimaler
+     * @return a värdet som ska skrivas ut 
+     */
     private double round(double a, double b){
         a = Math.round(a * Math.pow(10, b))/ Math.pow(10, b);
         return a;
     }
     
-    //Metod som skriver ut svaret a
+    
+    
+    
+    
+    /**
+     * Metod som skriver ut svaret a
+     * @param a Värdet som ska skrivas ut
+     */
     private void answer(double a){
         double large = Math.pow(10, 14);
         if(a < large){
@@ -489,6 +507,13 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         }
     }
     
+    
+    
+    
+    /**
+     * Metod som kontrolerar om det finns ett nummer i txfOutput genom att se 
+     * om det kraschar när det körs
+     */
     private void catchNoNum(){
         try{
        
@@ -506,7 +531,13 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }
     
     
-    //Metod som utför uträkningar
+    
+    
+    
+    /**
+     * Metod som testar metoden btnEqual när den körs ifall den skulle krascha
+     * @param evt 
+     */
     private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
 
        try{
@@ -520,11 +551,17 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEqualActionPerformed
     
+    
+    
+    
+    
+    /**
+     * Metod som utför olika uträkningar beronde på vilka knappar som blivit 
+     * aktiverade innan och vilket tecken variablen sign har.
+     */
     private void btnEqual(){
-        /**Switch case som beroend på tidigare angivet "sign" 
-         * utför olika uträkningar med total1 & total2
-        **/
         
+        //Switch case som beroend på tidigare angivet "sign" utför olika uträkningar med total1 & total2
         switch(sign){
             case "+" : total2 = total1+Double.parseDouble(txfOutput.getText()) ;
                        break;
@@ -534,7 +571,8 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                        
             case "*" : total2 = total1*Double.parseDouble(txfOutput.getText());
                        break;
-                       
+            
+            //case som testar ifall txfOutput är noll annars delar den total1 på det värdet
             case "/" : 
                         if(Double.parseDouble( txfOutput.getText( )) != 0.0){
                             total2 = total1 /
@@ -545,7 +583,7 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                             clear = true;
                         }
                         break;
-                                      
+            //case som testar ifall total1 är negativt annars tar den roten av den                       
             case "sq" : 
                     if(total1 < 0){
                             
@@ -569,8 +607,8 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
             case "Div1" : total2 = 1/total1 ;
                        break;
             
-                       /**Här tar och använder en for loop för att kunna 
-                        * multiplicera alla tidigare tal med varandra **/
+            /**case som testar ifall total1 är negativt eller ett deciamltal och 
+             * använder sedan en "for" loop för att kunna multiplicera alla tidigare tal med varandra **/
             case "Fa" : 
                 
                         if(total1 < 0 || (total1 % 1) != 0 ){
@@ -601,132 +639,215 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }
     
     
+    
+    
+    
     /**
-     * Metoden skriver ut deras nummer i txfOutput om de blir anropade
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
      * @param evt 
      */
     private void btnNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber1ActionPerformed
-
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
-        
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnOneText = txfOutput.getText() + btnNumber1.getText();
         txfOutput.setText(btnOneText);
     }//GEN-LAST:event_btnNumber1ActionPerformed
     
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber2ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnTwoText = txfOutput.getText() + btnNumber2.getText( );
         txfOutput.setText(btnTwoText);
     }//GEN-LAST:event_btnNumber2ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber3ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnThreeText = txfOutput.getText() + btnNumber3.getText( );
         txfOutput.setText(btnThreeText);
     }//GEN-LAST:event_btnNumber3ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber4ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnFourText = txfOutput.getText() + btnNumber4.getText( );
         txfOutput.setText(btnFourText);
     }//GEN-LAST:event_btnNumber4ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber5ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnFiveText = txfOutput.getText() + btnNumber5.getText( );
         txfOutput.setText(btnFiveText);
     }//GEN-LAST:event_btnNumber5ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber6ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnSixText = txfOutput.getText() + btnNumber6.getText( );
         txfOutput.setText(btnSixText);
     }//GEN-LAST:event_btnNumber6ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber7ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnSevenText = txfOutput.getText() + btnNumber7.getText( );
         txfOutput.setText(btnSevenText);
     }//GEN-LAST:event_btnNumber7ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber8ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnEightText = txfOutput.getText() + btnNumber8.getText( );
         txfOutput.setText(btnEightText);
     }//GEN-LAST:event_btnNumber8ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber9ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnNineText = txfOutput.getText() + btnNumber9.getText( );
         txfOutput.setText(btnNineText);
     }//GEN-LAST:event_btnNumber9ActionPerformed
-
+    
+    /**
+     * Metod som skriver ut sitt nummer i txfOutput om de blir anropade!
+     * @param evt 
+     */
     private void btnNumber0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumber0ActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnZeroText = txfOutput.getText() + btnNumber0.getText( );
         txfOutput.setText(btnZeroText);
     }//GEN-LAST:event_btnNumber0ActionPerformed
 
     
     
+    
+    
     /**
-     * Metoderna här under anger vilket tecken som ska 
-     * användas av "btnEqualActionPerformed"
+     * Metod som anger vilket tecken som btnEqual ska använda
      * @param evt 
      */
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        //Anropar metoden catchNoNum & ger sitt tecken till Medelemsvariablen sign
         catchNoNum();
         sign = "+" ;
     }//GEN-LAST:event_btnAddActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som btnEqual ska använda
+     * @param evt 
+     */
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
+        //Anropar metoden catchNoNum & ger sitt tecken till Medelemsvariablen sign
         catchNoNum();
         sign = "-" ;
     }//GEN-LAST:event_btnSubActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som btnEqual ska använda
+     * @param evt 
+     */
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
+        //Anropar metoden catchNoNum & ger sitt tecken till Medelemsvariablen sign
         catchNoNum();
         sign = "*" ;
     }//GEN-LAST:event_btnMultActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som btnEqual ska använda
+     * @param evt 
+     */
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+        //Anropar metoden catchNoNum & ger sitt tecken till Medelemsvariablen sign
         catchNoNum();
         sign = "/" ;
     }//GEN-LAST:event_btnDivActionPerformed
 
     
-    //Metod som rensar alla vaiabler och Output fönstret (ej minne)
+    
+    
+    
+    /**
+     * Metod som återställer total1, total2, sign och txfOutput 
+     * till sina orignalvärden utan att röra minnet
+     * 
+     * @param evt 
+     */
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+
         total1 = 0.0;
         total2 = 0.0;
         sign = "";
@@ -735,18 +856,32 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
     
     
-    //Metod som lägger till en punkt i output fönstret ifall den blir anropad
+    
+    
+    
+    /**
+     * Metod som lägger till en punkt i output fönstret ifall den blir anropad
+     * @param evt 
+     */
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
+        // Tar och rensar txfOutput när clear är TRUE
         if(clear == true){
         txfOutput.setText("");
         clear = false;
         }
+        //Tar nummeret från knappen och txfOutput och sickar sedan det till txfOutput
         String btnDotText = txfOutput.getText() + btnDot.getText( );
         txfOutput.setText(btnDotText);
     }//GEN-LAST:event_btnDotActionPerformed
 
     
-    // Rensar memory variablen & "txfMemValue"
+    
+    
+    
+    /**
+     * Metod somr rensar memory variablen & "txfMemValue"
+     * @param evt 
+     */
     private void btnClearMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearMemoryActionPerformed
         memory = 0;
         txfMemValue.setText(Double.toString(memory));
@@ -759,8 +894,12 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         txfMemValue.setText(Double.toString(memory));
         clear = true;
     }//GEN-LAST:event_btnRecallMemActionPerformed
-    
-    // Adderar txfOutput värdet till memory variablen &  updaterar "txfMemValue"
+     
+    /**
+     * Metod som adderar txfOutput värdet 
+     * till memory variablen &  updaterar "txfMemValue"
+     * @param evt 
+     */
     private void btnAddMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMemoryActionPerformed
     try{
        
@@ -773,10 +912,9 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddMemoryActionPerformed
-    
-    
+
     /**
-     * Subtraherar txfOutput värdet till memory variablen 
+     * Metod som subtraherar txfOutput värdet till memory variablen 
      * &  updaterar "txfMemValue"
      * @param evt 
      */
@@ -796,8 +934,11 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubMemoryActionPerformed
 
     
+    
+    
+    
     /**
-     * Multiplicerar txfOutput värdet med -1 för att ändra teckenvärdet
+     * Metod som multiplicerar txfOutput värdet med -1 för att ändra teckenvärdet
      * @param evt 
      */
     private void btnChangeValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeValueActionPerformed
@@ -817,9 +958,12 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChangeValueActionPerformed
     
     
+    
+    
+    
     /**
-     * Metoderna här under anger vilket tecken som ska användas 
-     * av "btnEqualActionPerformed"
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
      * @param evt 
      */
     private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
@@ -827,40 +971,74 @@ public class Miniraknare_JFrame extends javax.swing.JFrame {
         sign = "sq" ;
         btnEqual();
     }//GEN-LAST:event_btnSquareActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
+     * @param evt 
+     */
     private void btnPow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow2ActionPerformed
         catchNoNum();
         sign = "P2" ;
         btnEqual();
     }//GEN-LAST:event_btnPow2ActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
+     * @param evt 
+     */
     private void btnPow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPow3ActionPerformed
         catchNoNum();
         sign = "P3" ;
         btnEqual();
     }//GEN-LAST:event_btnPow3ActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
+     * @param evt 
+     */
     private void btnOneDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneDivActionPerformed
         catchNoNum();
         sign = "Div1" ;
         btnEqual();
     }//GEN-LAST:event_btnOneDivActionPerformed
-
+    
+    /**
+     * METOD SOM JAG INTE KAN TA BORT
+     * @param evt 
+     */
     private void btnSquare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquare1ActionPerformed
     }//GEN-LAST:event_btnSquare1ActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
+     * @param evt 
+     */
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
         catchNoNum();
         sign = "Fa" ;
         btnEqual();
     }//GEN-LAST:event_btnFactActionPerformed
-
+    
+    /**
+     * Metod som anger vilket tecken som ska användas 
+     * av "btnEqual"
+     * @param evt 
+     */
     private void btnPowYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPowYActionPerformed
         catchNoNum();
         sign = "PowY" ;
     }//GEN-LAST:event_btnPowYActionPerformed
 
+    
+    
+    
+    
     /**
+     * MAIN
      * @param args the command line arguments
      */
     public static void main(String args[]) {
